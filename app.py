@@ -6,6 +6,7 @@ app = Flask(__name__)
 def respond():
     # Retrieve the name from url parameter
     name = request.args.get("name", None)
+    poop = request.args.get("poop", None)
 
     # For debugging
     print(f"got name {name}")
