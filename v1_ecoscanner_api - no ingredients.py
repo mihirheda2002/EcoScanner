@@ -8,7 +8,7 @@ from firebase import firebase
 import datetime
 #from selenium import webdriver
 from urllib.request import urlopen as uReq
-frmo bs4 import BeautifulSoup as soup
+from bs4 import BeautifulSoup as soup
 import requests
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize
@@ -738,7 +738,7 @@ def eco_scanner(query):
         time_dict_2[key] = str(time_dict[key])
     print(time_dict_2)
 
-    return render_template(json.dumps(all_product_values)=all_product_values)
+    return jsonify(all_product_values)
 
 
     # with open(f"v1_{query}_times.json","w") as file:
