@@ -3,19 +3,24 @@
 
 import datetime
 import time
-now = datetime.datetime.now()
 from firebase import firebase
 import datetime
 #from selenium import webdriver
 from urllib.request import urlopen as uReq
-frmo bs4 import BeautifulSoup as soup
+from bs4 import BeautifulSoup as soup
 import requests
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize
 import json
+from flask import Flask, request, jsonify
 
-@app.route("/<<query>>")
+app = Flask(__name__)
+
+@app.route("/scan_upc/<query>",methods=["GET"])
 def eco_scanner(query):
+
+    time_dict = {} 
+
     if not isinstance(query,str):
         query = str(query)
     all_product_values = {}
@@ -24,9 +29,9 @@ def eco_scanner(query):
 
     sw = stopwords.words("english")
 
-    later = datetime.datetime.now()
-    duration = later- now
-    time_dict = {"imports":duration}
+    #later = datetime.datetime.now()
+    #duration = later- now
+    #time_dict = {"imports":duration}
 
 
     # make sure "v2_organic_operations_dict.json" in directory : in git
@@ -179,7 +184,7 @@ def eco_scanner(query):
     time_dict["lookup upc"] = duration
 
     if upc_info_dict is None:
-        return {"data":"not found"}
+        return jsonify({"data":"not found"})
     brand = upc_info_dict["Brand"]
     all_product_values["brand"] = brand
     print(upc_info_dict)
@@ -738,13 +743,15 @@ def eco_scanner(query):
         time_dict_2[key] = str(time_dict[key])
     print(time_dict_2)
 
-    return render_template(json.dumps(all_product_values)=all_product_values)
+    return jsonify(all_product_values)
 
 
     # with open(f"v1_{query}_times.json","w") as file:
     #     string = json.dumps(time_dict_2)
     #     file.write(string)
 
+if __name__ == '__main__':
+    app.run(threaded=True,port=5000,debug=True)
 
 
 
