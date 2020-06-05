@@ -786,7 +786,7 @@ def eco_scanner():
     #     string = json.dumps(time_dict_2)
     #     file.write(string)
 
-    response["MESSAGE"] = all_product_values
+    response["MESSAGE"] = f"query: {query} response: {all_product_values}"
     
     return jsonify(response)
 
