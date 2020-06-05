@@ -1,6 +1,5 @@
 # app.py
 from flask import Flask, request, jsonify
-app = Flask(__name__)
 
 #!/usr/bin/env python
 # coding: utf-8
@@ -21,15 +20,45 @@ import ssl
 
 app = Flask(__name__)
 
-@app.route("/scan_upc/<query>",methods=["GET"])
-def eco_scanner(query):
+#@app.route('/getmsg/', methods=['GET'])
+#def respond():
+#    # Retrieve the name from url parameter
+#    name = request.args.get("name", None)
+#    poop = request.args.get("poop", None)
+#
+#    # For debugging
+#    print(f"got name {name}")
+#
+#    response = {}
+#
+#    # Check if user sent a name at all
+#    if not name:
+#        response["ERROR"] = "no name found, please send a name."
+#    # Check if the user entered a number not a name
+#    elif str(name).isdigit():
+#        response["ERROR"] = "name can't be numeric."
+#    # Now the user entered a valid name
+#    else:
+#        response["MESSAGE"] = f"Welcome {name} to our {poop} platform!!"
+#
+#    # Return the response in json format
+#    return jsonify(response)
 
+@app.route('/scan/',methods=["GET"])
+    
+def eco_scanner():
+    
+    query = request.args.get("query", None)
+    
+    response = {}
+    
     context = ssl._create_unverified_context()
 
     time_dict = {}
 
     if not isinstance(query,str):
         query = str(query)
+        
     all_product_values = {}
 
     fb_connect = firebase.FirebaseApplication("https://ecoscanner-cb66d.firebaseio.com/",None)
@@ -750,43 +779,15 @@ def eco_scanner(query):
         time_dict_2[key] = str(time_dict[key])
     print(time_dict_2)
 
-    return jsonify(all_product_values)
+    #return jsonify(all_product_values)
 
 
     # with open(f"v1_{query}_times.json","w") as file:
     #     string = json.dumps(time_dict_2)
     #     file.write(string)
 
-if __name__ == '__main__':
-    app.run(threaded=True,port=5000,debug=True)
-
-
-
-
-
-
-@app.route('/getmsg/', methods=['GET'])
-def respond():
-    # Retrieve the name from url parameter
-    name = request.args.get("name", None)
-    poop = request.args.get("poop", None)
-
-    # For debugging
-    print(f"got name {name}")
-
-    response = {}
-
-    # Check if user sent a name at all
-    if not name:
-        response["ERROR"] = "no name found, please send a name."
-    # Check if the user entered a number not a name
-    elif str(name).isdigit():
-        response["ERROR"] = "name can't be numeric."
-    # Now the user entered a valid name
-    else:
-        response["MESSAGE"] = f"Welcome {name} to our {poop} platform!!"
-
-    # Return the response in json format
+    response["MESSAGE"] = all_prodct_values
+    
     return jsonify(response)
 
 @app.route('/post/', methods=['POST'])
