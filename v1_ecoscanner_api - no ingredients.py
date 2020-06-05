@@ -20,6 +20,8 @@ app = Flask(__name__)
 @app.route("/scan_upc/<query>",methods=["GET"])
 def eco_scanner(query):
 
+    context = ssl._create_unverified_context()
+
     time_dict = {} 
 
     context = ssl._create_unverified_context()
@@ -115,7 +117,11 @@ def eco_scanner(query):
         
         #open urllib client, accounting for page not-existing
         try:
+<<<<<<< HEAD
             uClient = uReq(my_url,context=context)
+=======
+            uClient = uReq(my_url, context=context)
+>>>>>>> dec6284613ad2bc69b48661c4dbbfc2c3cac5a49
         except:
             return None
         
@@ -754,7 +760,7 @@ def eco_scanner(query):
     #     file.write(string)
 
 if __name__ == '__main__':
-    app.run(threaded=True,port=5000,debug=True)
+    app.run(threaded=True,host="0.0.0.0",port=5000,debug=True)
 
 
 
