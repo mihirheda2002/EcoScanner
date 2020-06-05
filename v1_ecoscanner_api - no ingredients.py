@@ -13,11 +13,14 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import json
 from flask import Flask, request, jsonify
+import ssl
 
 app = Flask(__name__)
 
 @app.route("/scan_upc/<query>",methods=["GET"])
 def eco_scanner(query):
+
+    context = ssl._create_unverified_context()
 
     time_dict = {} 
 
@@ -112,7 +115,7 @@ def eco_scanner(query):
         
         #open urllib client, accounting for page not-existing
         try:
-            uClient = uReq(my_url)
+            uClient = uReq(my_url, context=context)
         except:
             return None
         
