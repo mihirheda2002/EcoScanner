@@ -17,7 +17,7 @@ import ssl
 
 application = Flask(__name__)
 
-@application.route("/")
+@application.route("/",methods=["GET"])
 def home():
     return "<h1>Welcome to our server!!!</h1>"
 
@@ -764,7 +764,7 @@ def eco_scanner(query):
     #     file.write(string)
 
 if __name__ == '__main__':
-    application.run(threaded=True,host="0.0.0.0",port=5000,debug=True)
+    application.run(host="0.0.0.0",debug=True)
 
 
 
