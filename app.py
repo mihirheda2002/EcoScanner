@@ -12,14 +12,14 @@ import datetime
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 import requests
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+#from nltk.corpus import stopwords
+#from nltk.tokenize import word_tokenize
 import json
 from flask import Flask, request, jsonify
 import ssl
 
 app = Flask(__name__)
-nltk.download("stopwords")
+#nltk.download("stopwords")
 
 #@app.route('/getmsg/', methods=['GET'])
 #def respond():
