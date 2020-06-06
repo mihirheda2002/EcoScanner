@@ -19,6 +19,7 @@ from flask import Flask, request, jsonify
 import ssl
 
 app = Flask(__name__)
+nltk.download("stopwords")
 
 #@app.route('/getmsg/', methods=['GET'])
 #def respond():
