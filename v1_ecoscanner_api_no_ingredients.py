@@ -15,9 +15,13 @@ import json
 from flask import Flask, request, jsonify
 import ssl
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/scan_upc/<query>",methods=["GET"])
+@application.route("/")
+def home():
+    return "<h1>Welcome to our server!!!</h1>"
+
+@application.route("/scan_upc/<query>",methods=["GET"])
 def eco_scanner(query):
 
     context = ssl._create_unverified_context()
@@ -760,7 +764,7 @@ def eco_scanner(query):
     #     file.write(string)
 
 if __name__ == '__main__':
-    app.run(threaded=True,host="0.0.0.0",port=5000,debug=True)
+    application.run(threaded=True,host="0.0.0.0",port=5000,debug=True)
 
 
 
