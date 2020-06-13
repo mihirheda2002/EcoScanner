@@ -23,7 +23,7 @@ extension StringProtocol {
 
 //let notFoundVC = storyBoard.instantiateViewController(withIdentifier: "BarcodeNotFoundViewController") as! BarcodeNotFoundViewController
 
-
+var scoreDic: [String: String] = [:]
 
 class ScoreViewController: UIViewController {
     
@@ -43,38 +43,9 @@ class ScoreViewController: UIViewController {
         
         //textLabel?.text = text
         
-        parse(inJson:json)
-        
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-        ref.child("evaluated").child("6666666666666").observeSingleEvent(of: .value, with: { (snapshot) in
-            //Get User Value
-            let value  = snapshot.value as? NSDictionary
-            print(value!)
-        })
-        
-        /*
-        while json.isEmpty{
-            print("checking if empty")
-            print(json)
-            if !(json.isEmpty){
-                let jsonParts = json.components(separatedBy: " ")
-                print(jsonParts)
-                if jsonParts.contains("found\"\n}\n"){
-                    print("so the if statement worked bc the data was not found but like why isnt it working doe")
-                    self.navigationController?.pushViewController(notFoundVC, animated: true)
-                    //self.present(notFoundView, animated: true, completion: nil)
-                    //self.present(notFoundVC, animated: true, completion: nil)
-                }
-                else{
-                    parse()
-                }
-            }
-            
-        }
- */
-    
+        scoreDic = parse(inJson:json)
     }
+
     
     public func parse(inJson:String) -> Dictionary<String, String>{
         

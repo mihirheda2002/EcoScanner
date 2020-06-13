@@ -34,7 +34,7 @@ class ManuallyEnterViewController: UIViewController, UITextFieldDelegate{
         
         json = ""
         
-        if let url = URL(string: "http://100.24.206.109/scan_upc/"+(manualBarcode.text!)) {
+        if let url = URL(string: "http://34.201.212.152/scan/"+(manualBarcode.text!)) {
            URLSession.shared.dataTask(with: url) { data, response, error in
               if let data = data {
                  if let jsonString = String(data: data, encoding: .utf8) {

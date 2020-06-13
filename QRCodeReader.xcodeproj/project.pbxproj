@@ -22,7 +22,6 @@
 		7AEDBE5A240B0D9C00B32709 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDBE59240B0D9C00B32709 /* HomePage.swift */; };
 		7AEDBE5E240B2B6F00B32709 /* SearchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDBE5D240B2B6F00B32709 /* SearchID.swift */; };
 		7AEDBE64240B63A700B32709 /* DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDBE63240B63A700B32709 /* DescriptionController.swift */; };
-		7AFB712524903198005DFA9A /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB712424903198005DFA9A /* MoreInfoViewController.swift */; };
 		E482F8461B57431DAB41CD88 /* Pods_QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA52F7C42B0DD34F7547E9F4 /* Pods_QRCodeReader.framework */; };
 		F4F09DB71DAF669400026BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F09DB61DAF669400026BB2 /* AppDelegate.swift */; };
 		F4F09DBC1DAF669400026BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBA1DAF669400026BB2 /* Main.storyboard */; };
@@ -47,7 +46,6 @@
 		7AEDBE59240B0D9C00B32709 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		7AEDBE5D240B2B6F00B32709 /* SearchID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchID.swift; sourceTree = "<group>"; };
 		7AEDBE63240B63A700B32709 /* DescriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionController.swift; sourceTree = "<group>"; };
-		7AFB712424903198005DFA9A /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		AAACE15AEAD1E16A203B1772 /* Pods-QRCodeReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReader.release.xcconfig"; path = "Target Support Files/Pods-QRCodeReader/Pods-QRCodeReader.release.xcconfig"; sourceTree = "<group>"; };
 		EA52F7C42B0DD34F7547E9F4 /* Pods_QRCodeReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRCodeReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F09DB31DAF669400026BB2 /* QRCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +132,6 @@
 				7AEDBE5D240B2B6F00B32709 /* SearchID.swift */,
 				7A77AD062492037A003EBB30 /* LearnMoreViewController.swift */,
 				F4F09DC81DAF6A3800026BB2 /* PreScanpage.swift */,
-				7AFB712424903198005DFA9A /* MoreInfoViewController.swift */,
 				7A77AD0424920253003EBB30 /* BarcodeNotFoundViewController.swift */,
 				F4F09DCA1DAF6A4F00026BB2 /* Scanner.swift */,
 				7AEDBE63240B63A700B32709 /* DescriptionController.swift */,
@@ -294,7 +291,6 @@
 				7AEDBE5E240B2B6F00B32709 /* SearchID.swift in Sources */,
 				7A33768A248EA7C7004F2285 /* ManuallyEnterViewController.swift in Sources */,
 				7A55ECBA248EE6500017C3A1 /* ScoreViewController.swift in Sources */,
-				7AFB712524903198005DFA9A /* MoreInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

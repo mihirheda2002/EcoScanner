@@ -9,13 +9,16 @@
 import UIKit
 
 class MoreInfoViewController: UIViewController {
+    
+    
+    
+    let checkDic: [String: String] = ["0": "xmark.seal.fill", "1": "checkmark.seal.fill"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation
