@@ -33,7 +33,7 @@ class LearnMoreViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        var echoNum = "1.0"
+        var echoNum: String = ""
         if Float(scoreDic["echo"]!)! < -1{
             echoNum = "1.0"
         }
@@ -42,7 +42,9 @@ class LearnMoreViewController: UIViewController {
         }
         print("printing socreDic")
         print(scoreDic)
+        
         if #available(iOS 13.0, *) {
+        
             cdpaImg.image = UIImage(systemName: checkDic[scoreDic["cdpA"]!]!)
             if (checkDic[scoreDic["cdpA"]!]!) == ("xmark.seal.fill"){
                 cdpaImg.tintColor = UIColor.red
@@ -58,7 +60,7 @@ class LearnMoreViewController: UIViewController {
                 organicImg.tintColor = UIColor.green
             }
             echoImg.image = UIImage(systemName: checkDic[echoNum]!)
-            if (checkDic[scoreDic["echoNum"]!]!) == ("xmark.seal.fill"){
+            if (checkDic[echoNum]!) == ("xmark.seal.fill"){
                 echoImg.tintColor = UIColor.red
             }
             else{
@@ -85,8 +87,9 @@ class LearnMoreViewController: UIViewController {
             else{
                 rainForestImg.tintColor = UIColor.green
             }
+         
             
-        } else {
+        } else{
             // Fallback on earlier versions
         }
         
@@ -106,3 +109,5 @@ class LearnMoreViewController: UIViewController {
     */
 
 }
+
+

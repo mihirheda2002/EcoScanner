@@ -16,6 +16,9 @@ var price = ""
 var description = ""
 
 class QRScannerController: UIViewController {
+    
+    let notFoundVC = mainBoard.instantiateViewController(withIdentifier:"BarcodeNotFoundViewController") as! BarcodeNotFoundViewController
+    let foundVC = mainBoard.instantiateViewController(withIdentifier:"ScoreViewController") as! ScoreViewController
 
     @IBOutlet var messageLabel:UILabel!
     @IBOutlet var topbar: UIView!
@@ -115,7 +118,7 @@ class QRScannerController: UIViewController {
                     UIApplication.shared.open(url)
                 }
             }
-            self.performSegue(withIdentifier: "scanned", sender: self)
+            //self.performSegue(withIdentifier: "scanned", sender: self)
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
@@ -177,6 +180,13 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
             
             barcode = metadataObj.stringValue ?? "0"
+            print(barcode)
+            print(barcode.count)
+            if barcode.count == 13 {
+                let range = barcode.index(after: barcode.startIndex)..<barcode.endIndex
+                let tempBarcode = barcode[range]
+                barcode = String(tempBarcode)
+            }
             
             if supportedCodeTypes.contains(metadataObj.type) {
                 // If the found metadata is equal to the QR code metadata (or barcode) then update the status label's text and set the bounds
@@ -187,19 +197,42 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                     launchApp(decodedURL: barcode)
                     messageLabel.text = barcode
                     
-                    if let url = URL(string: "http://100.24.206.109/scan_upc/"+(barcode)) {
-                       URLSession.shared.dataTask(with: url) { data, response, error in
-                          if let data = data {
-                             if let jsonString = String(data: data, encoding: .utf8) {
-                                json = jsonString
+                    
+                    let link = "http://34.201.212.152/scan/"+barcode
+                    print(link)
+                    if let url = URL(string: link) {
+                    URLSession.shared.dataTask(with: url) { data, response, error in
+                       if let data = data {
+                          if let jsonString = String(data: data, encoding: .utf8) {
+                             json = jsonString
+                             print("printing jsonString")
+                             print(jsonString)
+                          }
+                        }
+                    }.resume()
+                     
+                     while json.isEmpty{
+                         print("checking if empty")
+                         print(json)
+                         if !(json.isEmpty){
+                             let jsonParts = json.components(separatedBy: " ")
+                             print(jsonParts)
+                             if jsonParts.contains("found\"\n}\n"){
+                                 print("so the if statement worked bc the data was not found but like why isnt it working doe")
+                                 //self.navigationController?.pushViewController(notFoundVC, animated: true)
+                                 present(notFoundVC, animated: true, completion: nil)
+                                 //self.present(notFoundVC, animated: true, completion: nil)
                              }
-                           }
-                       }.resume()
-                    }
+                             else{
+                                foundVC.text = json
+                                present(foundVC, animated: true, completion: nil)
+                             }
+                         }
+                     }
                     
                 }
             }
         }
     }
-    
+    }
 }

@@ -9,6 +9,9 @@
 import UIKit
 
 class HomePage: UIViewController {
+    
+    
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     
     override func viewDidLoad() {

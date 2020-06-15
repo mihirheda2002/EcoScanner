@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Yg-uN-0tW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="earthBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-dG-wH3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="earthBackground.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-dG-wH3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -215,6 +214,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a Valid UPC-12 Barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4x-sA-Hfk">
+                                <rect key="frame" x="37" y="348" width="339" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -238,6 +244,7 @@
                     <navigationItem key="navigationItem" id="xcK-H6-zys"/>
                     <connections>
                         <outlet property="manualBarcode" destination="85I-sB-Ct8" id="sWz-lM-Xc7"/>
+                        <outlet property="validLabel" destination="e4x-sA-Hfk" id="eYt-JB-NwJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCC-aG-Unc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -249,7 +256,7 @@
             <objects>
                 <viewController storyboardIdentifier="ScoreViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fua-wO-tsF" customClass="ScoreViewController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bhv-PM-Bpe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coq-qB-p6I">
@@ -307,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEp-Yz-uHO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866.6666666666667" y="-932.14285714285711"/>
+            <point key="canvasLocation" x="1819" y="-212"/>
         </scene>
         <!--Barcode Not Found View Controller-->
         <scene sceneID="ElP-Fw-0L7">
@@ -344,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cU6-8N-9xx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686.9565217391305" y="-1593.0803571428571"/>
+            <point key="canvasLocation" x="2687" y="-869"/>
         </scene>
         <!--Learn More View Controller-->
         <scene sceneID="ZIH-dG-9LH">
@@ -355,7 +362,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EcoScore Breakdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX5-3n-OVa">
-                                <rect key="frame" x="44" y="69" width="329" height="43"/>
+                                <rect key="frame" x="43" y="72" width="329" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="35"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -384,13 +391,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RainForest Alliance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="add-dK-T4D">
                                 <rect key="frame" x="51" y="588" width="240" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Parent Company:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qz-hF-K2K">
-                                <rect key="frame" x="51" y="195" width="218" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -446,22 +446,42 @@
                                 <rect key="frame" x="307" y="257" width="66" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-V8-ePr">
+                                <rect key="frame" x="186" y="165" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEN-g9-JzL">
+                                <rect key="frame" x="117" y="152" width="180" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <state key="normal" title="Back to Score">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Fua-wO-tsF" kind="show" id="Kf1-SN-srb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="NT7-kO-4Wy"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ish-CE-Mbd"/>
                     <connections>
-                        <outlet property="cdpaImg" destination="nHS-K5-U14" id="ZHf-g9-h8W"/>
-                        <outlet property="echoImg" destination="eyj-4h-rZZ" id="BVF-0x-2au"/>
+                        <outlet property="cdpaImg" destination="nHS-K5-U14" id="jJ2-ww-yr2"/>
+                        <outlet property="echoImg" destination="eyj-4h-rZZ" id="xUE-fv-6bq"/>
                         <outlet property="fairTradeImg" destination="tqc-66-9ZU" id="DS8-aR-G8y"/>
                         <outlet property="nonGMOImg" destination="Qzf-OK-Oe8" id="6dz-ZW-RzA"/>
+                        <outlet property="organicImg" destination="RIb-CP-GAq" id="B3K-Yi-Bkc"/>
                         <outlet property="rainForestImg" destination="rHa-zE-JeO" id="oOC-NM-EkK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLy-Ix-zZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698.5507246376815" y="-932.14285714285711"/>
+            <point key="canvasLocation" x="2687" y="-212"/>
         </scene>
         <!--Scanner Controller-->
         <scene sceneID="6su-PY-OE1">
@@ -527,119 +547,11 @@
                     <connections>
                         <outlet property="messageLabel" destination="AAl-zJ-uU4" id="2vr-bb-KNQ"/>
                         <outlet property="topbar" destination="qba-q7-QE8" id="jVg-Hf-y26"/>
-                        <segue destination="LL6-1j-DLc" kind="presentation" identifier="scanned" id="zaf-Lj-X3V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfO-3l-5Cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973.60000000000002" y="133.5832083958021"/>
-        </scene>
-        <!--Description Controller-->
-        <scene sceneID="UTN-8h-sVc">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="LL6-1j-DLc" customClass="DescriptionController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xtk-Kw-A1e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LAf-65-MFc">
-                                <rect key="frame" x="20" y="43.5" width="57" height="66"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eF-ho-MkZ">
-                                <rect key="frame" x="20" y="52" width="57" height="49"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="KiC-Yr-lHM"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-o0-XYa">
-                                <rect key="frame" x="20" y="138" width="118" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="PCK-xa-glS"/>
-                                    <constraint firstAttribute="width" constant="118" id="lnE-0f-ShS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dasani Watter Bottle Pack of 24" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pkl-8h-GLp">
-                                <rect key="frame" x="146" y="138" width="248" height="123"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$17" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MH4-TT-gpn">
-                                <rect key="frame" x="148" y="269" width="246" height="63"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3u-Mz-5Os">
-                                <rect key="frame" x="20" y="269" width="118" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="Rny-kg-gBP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKq-fU-BCM">
-                                <rect key="frame" x="20" y="357" width="191" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="L8Z-Gx-Mpu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dasani Watter Bottle Pack of 24" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krM-sf-bQb">
-                                <rect key="frame" x="20" y="428" width="374" height="235"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="MH4-TT-gpn" firstAttribute="trailing" secondItem="krM-sf-bQb" secondAttribute="trailing" id="07P-Lf-pvH"/>
-                            <constraint firstItem="A3u-Mz-5Os" firstAttribute="top" secondItem="qg4-o0-XYa" secondAttribute="bottom" constant="68" id="0rF-Rh-kYe"/>
-                            <constraint firstItem="Pkl-8h-GLp" firstAttribute="trailing" secondItem="MH4-TT-gpn" secondAttribute="trailing" id="1Qt-r6-uss"/>
-                            <constraint firstItem="qg4-o0-XYa" firstAttribute="top" secondItem="Pkl-8h-GLp" secondAttribute="top" id="2rC-sg-KTD"/>
-                            <constraint firstItem="3eF-ho-MkZ" firstAttribute="leading" secondItem="qg4-o0-XYa" secondAttribute="leading" id="4Hl-kI-FDA"/>
-                            <constraint firstItem="xym-iQ-EgR" firstAttribute="trailing" secondItem="3eF-ho-MkZ" secondAttribute="trailing" constant="337" id="5mM-vA-Pmb"/>
-                            <constraint firstItem="qg4-o0-XYa" firstAttribute="top" secondItem="LAf-65-MFc" secondAttribute="bottom" constant="27.5" id="7Io-f1-NaL"/>
-                            <constraint firstItem="3eF-ho-MkZ" firstAttribute="top" secondItem="xym-iQ-EgR" secondAttribute="top" constant="8" id="8mR-vZ-RJ0"/>
-                            <constraint firstItem="LAf-65-MFc" firstAttribute="top" secondItem="xym-iQ-EgR" secondAttribute="top" id="Bip-Ab-w4h"/>
-                            <constraint firstItem="Pkl-8h-GLp" firstAttribute="trailing" secondItem="xtk-Kw-A1e" secondAttribute="trailingMargin" id="CQQ-tZ-RG9"/>
-                            <constraint firstItem="A3u-Mz-5Os" firstAttribute="bottom" secondItem="MH4-TT-gpn" secondAttribute="bottom" id="Fme-bj-SsR"/>
-                            <constraint firstItem="A3u-Mz-5Os" firstAttribute="leading" secondItem="YKq-fU-BCM" secondAttribute="leading" id="Qlc-fV-woS"/>
-                            <constraint firstItem="YKq-fU-BCM" firstAttribute="top" secondItem="A3u-Mz-5Os" secondAttribute="bottom" constant="25" id="Rnz-VV-WlJ"/>
-                            <constraint firstItem="qg4-o0-XYa" firstAttribute="leading" secondItem="A3u-Mz-5Os" secondAttribute="leading" id="Sea-yC-6ZS"/>
-                            <constraint firstItem="krM-sf-bQb" firstAttribute="top" secondItem="YKq-fU-BCM" secondAttribute="bottom" constant="8" id="VCd-ly-2g0"/>
-                            <constraint firstItem="LAf-65-MFc" firstAttribute="trailing" secondItem="3eF-ho-MkZ" secondAttribute="trailing" id="drg-xn-q8C"/>
-                            <constraint firstItem="Pkl-8h-GLp" firstAttribute="leading" secondItem="qg4-o0-XYa" secondAttribute="trailing" constant="8" id="f3l-Sd-ITs"/>
-                            <constraint firstItem="A3u-Mz-5Os" firstAttribute="top" secondItem="MH4-TT-gpn" secondAttribute="top" id="f8k-aa-Fga"/>
-                            <constraint firstItem="YKq-fU-BCM" firstAttribute="leading" secondItem="krM-sf-bQb" secondAttribute="leading" id="iyn-YV-Ox7"/>
-                            <constraint firstItem="Pkl-8h-GLp" firstAttribute="top" secondItem="xym-iQ-EgR" secondAttribute="top" constant="94" id="jlX-WX-ADU"/>
-                            <constraint firstItem="LAf-65-MFc" firstAttribute="leading" secondItem="3eF-ho-MkZ" secondAttribute="leading" id="mVh-hf-gTt"/>
-                            <constraint firstItem="LAf-65-MFc" firstAttribute="centerY" secondItem="3eF-ho-MkZ" secondAttribute="centerY" id="nD2-ZS-ADZ"/>
-                            <constraint firstItem="xym-iQ-EgR" firstAttribute="bottom" secondItem="krM-sf-bQb" secondAttribute="bottom" constant="199" id="sXU-nC-73u"/>
-                            <constraint firstItem="MH4-TT-gpn" firstAttribute="top" secondItem="Pkl-8h-GLp" secondAttribute="bottom" constant="8" id="vC7-C7-bt2"/>
-                            <constraint firstItem="LAf-65-MFc" firstAttribute="leading" secondItem="xtk-Kw-A1e" secondAttribute="leadingMargin" id="wAo-p8-vos"/>
-                            <constraint firstItem="qg4-o0-XYa" firstAttribute="trailing" secondItem="A3u-Mz-5Os" secondAttribute="trailing" id="wSE-1G-QC0"/>
-                            <constraint firstItem="MH4-TT-gpn" firstAttribute="leading" secondItem="A3u-Mz-5Os" secondAttribute="trailing" constant="10" id="xW5-gh-ZY3"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xym-iQ-EgR"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fia-Cb-PTJ"/>
-                    <connections>
-                        <outlet property="descriptionLabel" destination="krM-sf-bQb" id="Foa-3O-vHk"/>
-                        <outlet property="nameLabel" destination="Pkl-8h-GLp" id="OCX-Az-7Mg"/>
-                        <outlet property="priceLabel" destination="MH4-TT-gpn" id="ExY-X1-XY9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0aT-kN-FsM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1865" y="-212"/>
         </scene>
     </scenes>
     <resources>
@@ -649,9 +561,10 @@
         <image name="scannerImage.png" width="674" height="673"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Kf1-SN-srb"/>
         <segue reference="laQ-B7-lth"/>
         <segue reference="ew9-ch-lYE"/>
-        <segue reference="uKy-aK-HoT"/>
+        <segue reference="l0d-fC-HtM"/>
         <segue reference="8ZU-6p-6Tq"/>
     </inferredMetricsTieBreakers>
 </document>
