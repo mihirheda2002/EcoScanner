@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 43a6630ea5ac9cba9c5e4c551e9364a9ef250b9a
+PODS:
+  - SwiftGifOrigin (1.6.1)
+
+DEPENDENCIES:
+  - SwiftGifOrigin (~> 1.6.1)
+
+SPEC REPOS:
+  trunk:
+    - SwiftGifOrigin
+
+SPEC CHECKSUMS:
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+
+PODFILE CHECKSUM: cc31dd5dc987646badacf5857ab7d56d0dcdc53e
 
 COCOAPODS: 1.9.3

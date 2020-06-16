@@ -46,12 +46,19 @@ class QRScannerController: UIViewController {
         super.viewDidLoad()
 
         // Get the back-facing camera for capturing videos
+        barcode = ""
+        json = ""
+        name = ""
+        price = ""
+        
+        print("scanner view did load")
         guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
             print("Failed to get the camera device")
             return
         }
         
         do {
+            print("do func in view did load")
             // Get an instance of the AVCaptureDeviceInput class using the previous device object.
             let input = try AVCaptureDeviceInput(device: captureDevice)
             
@@ -105,6 +112,8 @@ class QRScannerController: UIViewController {
     // MARK: - Helper methods
 
     func launchApp(decodedURL: String) {
+        print("launching app")
+        json = ""
         
         if presentedViewController != nil {
             return
@@ -113,12 +122,50 @@ class QRScannerController: UIViewController {
         let alertPrompt = UIAlertController(title: "Open App", message: "You're going to open \(decodedURL)", preferredStyle: .actionSheet)
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
             
-            if let url = URL(string: decodedURL) {
+           /*if let url = URL(string: decodedURL) {
                 if UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url)
                 }
             }
-            //self.performSegue(withIdentifier: "scanned", sender: self)
+ */
+           
+            //self.performSegue(withIdentifier: "showSVC", sender: self)
+            
+            let link = "http://34.201.212.152/scan/"+barcode
+                print(link)
+                if let url = URL(string: link) {
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                   if let data = data {
+                      if let jsonString = String(data: data, encoding: .utf8) {
+                         json = jsonString
+                         print("printing jsonString")
+                         print(jsonString)
+                      }
+                    }
+                }.resume()
+                 
+                 while json.isEmpty{
+                     print("checking if empty" + barcode)
+                     //print(json)
+                     if !(json.isEmpty){
+                         let jsonParts = json.components(separatedBy: " ")
+                         print(jsonParts)
+                         if jsonParts.contains("found\"\n}\n") || jsonParts.contains("!DOCTYPE"){
+                            print("so the if statement worked bc the data was not found but like why isnt it working doe")
+                            //self.navigationController?.pushViewController(notFoundVC, animated: true)
+                            //self.present(self.notFoundVC, animated: true, completion: nil)
+                            //self.present(notFoundVC, animated: true, completion: nil)
+                            self.performSegue(withIdentifier: "showNFVC", sender: self)
+                         }
+                         else{
+                            self.foundVC.text = json
+                            //self.present(self.foundVC, animated: true, completion: nil)
+                            self.performSegue(withIdentifier: "showSVC", sender: self)
+                         }
+                     }
+                 }
+                
+            }
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
@@ -198,7 +245,7 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                     messageLabel.text = barcode
                     
                     
-                    let link = "http://34.201.212.152/scan/"+barcode
+                   /* let link = "http://34.201.212.152/scan/"+barcode
                     print(link)
                     if let url = URL(string: link) {
                     URLSession.shared.dataTask(with: url) { data, response, error in
@@ -231,6 +278,7 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                      }
                     
                 }
+ */
             }
         }
     }

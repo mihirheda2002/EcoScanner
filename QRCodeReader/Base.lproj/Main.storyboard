@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="earthBackground.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-dG-wH3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="earthBackdrop" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-dG-wH3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -176,7 +176,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="getScore:" destination="2cC-wd-TyE" eventType="touchDown" id="WE8-c4-JzT"/>
+                                    <segue destination="Rse-TE-ZML" kind="show" id="zDM-FV-CRK"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="W3t-5P-aje">
@@ -321,7 +321,7 @@
             <objects>
                 <viewController storyboardIdentifier="BarcodeNotFoundViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bx1-8L-1Hm" customClass="BarcodeNotFoundViewController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hKD-Jc-uFb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELW-pc-Gdx">
@@ -341,13 +341,14 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="l0d-fC-HtM"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="l0d-fC-HtM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tnC-zH-Vuc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FAl-9f-3Ie"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cU6-8N-9xx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -547,24 +548,58 @@
                     <connections>
                         <outlet property="messageLabel" destination="AAl-zJ-uU4" id="2vr-bb-KNQ"/>
                         <outlet property="topbar" destination="qba-q7-QE8" id="jVg-Hf-y26"/>
+                        <segue destination="Fua-wO-tsF" kind="show" identifier="showSVC" id="Nk4-k4-pbi"/>
+                        <segue destination="bx1-8L-1Hm" kind="show" identifier="showNFVC" id="dvO-10-rP4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfO-3l-5Cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973.60000000000002" y="133.5832083958021"/>
         </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="OT1-ln-SWu">
+            <objects>
+                <viewController id="Rse-TE-ZML" customClass="LoadingViewController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kIT-oB-pBn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GTg-AU-Vgg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWH-wz-wo7">
+                                <rect key="frame" x="138" y="614" width="138" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Q1E-CQ-dxd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mT8-dA-TFy"/>
+                    <connections>
+                        <outlet property="loadingEarth" destination="GTg-AU-Vgg" id="tz2-mC-Twc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zhb-aT-SUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792.753623188406" y="-1069.4196428571429"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cross" width="40" height="40"/>
-        <image name="earthBackground.png" width="1242" height="2208"/>
+        <image name="earthBackdrop" width="1242" height="2208"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="scannerImage.png" width="674" height="673"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kf1-SN-srb"/>
-        <segue reference="laQ-B7-lth"/>
-        <segue reference="ew9-ch-lYE"/>
-        <segue reference="l0d-fC-HtM"/>
-        <segue reference="8ZU-6p-6Tq"/>
+        <segue reference="Ca4-GB-QXg"/>
+        <segue reference="Nk4-k4-pbi"/>
+        <segue reference="7TV-0G-qXe"/>
+        <segue reference="CK5-B3-L7V"/>
+        <segue reference="vNB-dg-m2w"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -40,13 +40,20 @@ class LearnMoreViewController: UIViewController {
         else{
             echoNum = "0.0"
         }
+        var cdpaNum: String = ""
+        if Float(scoreDic["cdpA"]!)! > 0{
+            cdpaNum = "1.0"
+        }
+        else{
+            cdpaNum = "0.0"
+        }
         print("printing socreDic")
         print(scoreDic)
         
         if #available(iOS 13.0, *) {
         
-            cdpaImg.image = UIImage(systemName: checkDic[scoreDic["cdpA"]!]!)
-            if (checkDic[scoreDic["cdpA"]!]!) == ("xmark.seal.fill"){
+            cdpaImg.image = UIImage(systemName: checkDic[cdpaNum]!)
+            if (checkDic[cdpaNum]!) == ("xmark.seal.fill"){
                 cdpaImg.tintColor = UIColor.red
             }
             else{

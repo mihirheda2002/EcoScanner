@@ -18,6 +18,7 @@
 		7AD3952324884B4B007F826C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3952224884B4B007F826C /* LoginViewController.swift */; };
 		7AD3952524884C03007F826C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3952424884C03007F826C /* SignUpViewController.swift */; };
 		7AD3952724884C0F007F826C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3952624884C0F007F826C /* HomeViewController.swift */; };
+		7AEB8F332498188500D6DD06 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB8F322498188500D6DD06 /* LoadingViewController.swift */; };
 		7AEDBE5A240B0D9C00B32709 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDBE59240B0D9C00B32709 /* HomePage.swift */; };
 		7AEDBE5E240B2B6F00B32709 /* SearchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDBE5D240B2B6F00B32709 /* SearchID.swift */; };
 		A93543ADB26828DA2BB1C12D /* libPods-QRCodeReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25996211713D1B071F2FFD /* libPods-QRCodeReader.a */; };
@@ -31,7 +32,8 @@
 		6D833B2D9940EA8E9EBC0415 /* Pods-QRCodeReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReader.release.xcconfig"; path = "Target Support Files/Pods-QRCodeReader/Pods-QRCodeReader.release.xcconfig"; sourceTree = "<group>"; };
 		74C653EA81749C07CB2BDC4B /* Pods-QRCodeReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReader.debug.xcconfig"; path = "Target Support Files/Pods-QRCodeReader/Pods-QRCodeReader.debug.xcconfig"; sourceTree = "<group>"; };
 		7A337689248EA7C7004F2285 /* ManuallyEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyEnterViewController.swift; sourceTree = "<group>"; };
-		7A55ECB5248ECA9B0017C3A1 /* earthBackground */ = {isa = PBXFileReference; lastKnownFileType = file; name = earthBackground; path = QRCodeReader/earthBackground; sourceTree = "<group>"; };
+		7A36BD1C249841000042A1EE /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
+		7A55ECB5248ECA9B0017C3A1 /* earthBackground */ = {isa = PBXFileReference; lastKnownFileType = file; path = earthBackground; sourceTree = "<group>"; };
 		7A55ECB9248EE6500017C3A1 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		7A55ECC3248F04200017C3A1 /* scannerImage */ = {isa = PBXFileReference; lastKnownFileType = file; name = scannerImage; path = QRCodeReader/scannerImage; sourceTree = "<group>"; };
 		7A77AD0224918540003EBB30 /* dials */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dials; path = /Users/vishesh/Desktop/EcoScannerV1/QRCodeReader/dials; sourceTree = "<absolute>"; };
@@ -41,6 +43,7 @@
 		7AD3952224884B4B007F826C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7AD3952424884C03007F826C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7AD3952624884C0F007F826C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7AEB8F322498188500D6DD06 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		7AEDBE59240B0D9C00B32709 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		7AEDBE5D240B2B6F00B32709 /* SearchID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchID.swift; sourceTree = "<group>"; };
 		AE25996211713D1B071F2FFD /* libPods-QRCodeReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QRCodeReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +101,6 @@
 			children = (
 				F4F09DB51DAF669400026BB2 /* QRCodeReader */,
 				F4F09DB41DAF669400026BB2 /* Products */,
-				7A55ECB5248ECA9B0017C3A1 /* earthBackground */,
 				7A55ECC3248F04200017C3A1 /* scannerImage */,
 				267F1659AEB236D58D0AD087 /* Frameworks */,
 				201E86D102222253C65ADE8A /* Pods */,
@@ -119,10 +121,13 @@
 				F4F09DB61DAF669400026BB2 /* AppDelegate.swift */,
 				F4F09DBA1DAF669400026BB2 /* Main.storyboard */,
 				F4F09DBD1DAF669400026BB2 /* Assets.xcassets */,
+				7A55ECB5248ECA9B0017C3A1 /* earthBackground */,
 				7A77AD0224918540003EBB30 /* dials */,
+				7A36BD1C249841000042A1EE /* giphy.gif */,
 				F4F09DC21DAF669400026BB2 /* Info.plist */,
 				7AEDBE59240B0D9C00B32709 /* HomePage.swift */,
 				7A337689248EA7C7004F2285 /* ManuallyEnterViewController.swift */,
+				7AEB8F322498188500D6DD06 /* LoadingViewController.swift */,
 				7A55ECB9248EE6500017C3A1 /* ScoreViewController.swift */,
 				7AEDBE5D240B2B6F00B32709 /* SearchID.swift */,
 				7A77AD062492037A003EBB30 /* LearnMoreViewController.swift */,
@@ -243,6 +248,7 @@
 				7AD3952324884B4B007F826C /* LoginViewController.swift in Sources */,
 				7AD3952724884C0F007F826C /* HomeViewController.swift in Sources */,
 				7A77AD072492037A003EBB30 /* LearnMoreViewController.swift in Sources */,
+				7AEB8F332498188500D6DD06 /* LoadingViewController.swift in Sources */,
 				F4F09DCB1DAF6A4F00026BB2 /* Scanner.swift in Sources */,
 				7AD3952524884C03007F826C /* SignUpViewController.swift in Sources */,
 				7AEDBE5A240B0D9C00B32709 /* HomePage.swift in Sources */,
