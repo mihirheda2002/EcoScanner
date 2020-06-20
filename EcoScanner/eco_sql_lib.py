@@ -2,7 +2,7 @@ import os
 import psycopg2
 
 def curse():
-	DATABASE_URL = "postgres://kdjrttwrzylfcb:0634afc6c9ed6e34273cabdca2c5961d7c2520eff7e3983659b3d2dbe09ce1ad@ec2-52-70-15-120.compute-1.amazonaws.com:5432/d4pdg2cp43r897"
+	DATABASE_URL = "postgres://ezghcmygmrbrop:7abb507396ab2deed0bf71385f603882588df832a37fd299a66ee920d63f1402@ec2-3-215-83-17.compute-1.amazonaws.com:5432/d6k2a3ik6vinao"
 	conn = psycopg2.connect(DATABASE_URL,sslmode='require')
 
 	cur = conn.cursor()
@@ -62,8 +62,8 @@ def brand_info(brand,cur,conn):
 			self.row_dict["cdpA"] = row_list[3]
 			self.row_dict["fair_trade"] = row_list[4]
 			self.row_dict["nonGMO"] = row_list[5]
-			self.row_dict["RA"] = row_list[6]
-			self.row_dict["organic_operation_ID"] =row_list[7]
+			self.row_dict["RA"] = row_list[7]
+			self.row_dict["organic_operation_ID"] =row_list[6]
 
 		def print_row(self):
 			for key in self.row_dict.keys():

@@ -21,31 +21,6 @@ import eco_sql_lib
 
 
 app = Flask(__name__)
-#nltk.download("stopwords")
-
-#@app.route('/getmsg/', methods=['GET'])
-#def respond():
-#    # Retrieve the name from url parameter
-#    name = request.args.get("name", None)
-#    poop = request.args.get("poop", None)
-#
-#    # For debugging
-#    print(f"got name {name}")
-#
-#    response = {}
-#
-#    # Check if user sent a name at all
-#    if not name:
-#        response["ERROR"] = "no name found, please send a name."
-#    # Check if the user entered a number not a name
-#    elif str(name).isdigit():
-#        response["ERROR"] = "name can't be numeric."
-#    # Now the user entered a valid name
-#    else:
-#        response["MESSAGE"] = f"Welcome {name} to our {poop} platform!!"
-#
-#    # Return the response in json format
-#    return jsonify(response)
 
 @app.route('/scan/<query>',methods=["GET"])
     
@@ -65,12 +40,7 @@ def eco_scanner(query):
 
     sw = stopwords.words("english")
 
-    #later = datetime.datetime.now()
-    #duration = later- now
-    #time_dict = {"imports":duration}
-
-
-    # make sure "v2_organic_operations_dict.json" in directory : in git
+    # make sure "v2_organic_operations_dict.json" in directory / in git
 
 
     def endpoints(x,lower=0,upper=10):
@@ -228,7 +198,10 @@ def eco_scanner(query):
 
     if upc_info_dict is None:
         return jsonify({"data":"not found"})
-    brand = upc_info_dict["Brand"]
+    try:
+    	brand = upc_info_dict["Brand"]
+	except KeyError:
+		return jsonify({"data":"not found"})
     all_product_values["brand"] = brand
     print(upc_info_dict)
 
@@ -238,7 +211,7 @@ def eco_scanner(query):
         for char in sucky_chars:
             product = product.replace(char,"").strip()
         for brand_part in brand.split(","):
-            product = product.replace(brand_part,"").strip()
+            product = product.replace(brand_part+" ","").strip()
         return product
 
 
