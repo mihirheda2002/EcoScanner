@@ -720,7 +720,6 @@ def eco_scanner(query):
     sql_response = eco_sql_lib.brand_info(brand,cur,conn)
     print("sql response is about to print")
     print(sql_response)
-    sql_response.print_row()
     if sql_response is None:
         shared_dict = shared_by_brand(brand,product_name,cur,conn)
     else:
@@ -839,5 +838,5 @@ def index():
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
-    app.run(threaded=True,port=5000,debug=True)
-    #app.run(threaded=True, port=80,host="0.0.0.0")
+    #app.run(threaded=True,port=5000,debug=True)
+    app.run(threaded=True, port=80,host="0.0.0.0")
