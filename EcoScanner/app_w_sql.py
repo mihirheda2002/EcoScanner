@@ -206,7 +206,7 @@ def eco_scanner(query):
 
 
     def clean_product(product,brand):
-        sucky_chars = ["-",":",";","(",")","_","%","#","^","&","!","oz","Oz","Cups","cups","pack","Pack"]
+        sucky_chars = ["-",":",";","(",")","_","%","#","^","&","!","oz","Oz","Cups","cups","pack","Pack","cans","Cans"]
         for char in sucky_chars:
             product = product.replace(char,"").strip()
         #for brand_part in brand.split(","):
