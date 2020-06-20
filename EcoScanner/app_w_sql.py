@@ -213,6 +213,9 @@ def eco_scanner(query):
          #   product = product.replace(brand_part+" ","").strip()
         product = product.replace(brand+" ","").strip()
 
+        while "  " in product:
+            product = product.replace("  "," ")
+
         return product
 
 
