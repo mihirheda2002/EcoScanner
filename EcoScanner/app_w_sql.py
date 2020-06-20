@@ -303,6 +303,8 @@ def eco_scanner(query):
                         intake = side_box_check(brand,page_soup)
                         if isinstance(intake,str):
                             return intake
+                        elif intake is None:
+                            return brand
                         for item in intake:
                             output.append(item.replace("&amp;","&"))
                         return output
