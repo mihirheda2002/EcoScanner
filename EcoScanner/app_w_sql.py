@@ -492,7 +492,7 @@ def eco_scanner(query):
         duration = later- now
         time_dict["ECHO"] = duration #"""
 
-        echo = endpoints(echo,lower=0,upper=5)
+        echo = endpoints(echo,lower=0,upper=3)
 
         echo *= (0-1)
 
