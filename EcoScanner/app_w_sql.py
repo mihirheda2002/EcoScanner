@@ -657,7 +657,7 @@ def eco_scanner(query):
         do_trash=True
         if do_trash:
             # get rid of common words that are clutter, this list should grow with testing
-            trash_list = ["Organic ",brand,"Super ","Green ","Ounce","ounce","count","Count"]
+            trash_list = ["Organic ",brand,"Super ","Green ","Ounce","ounce","count","Count","pack"]
             for stink in trash_list:
                 product = product.replace(stink,"").strip()
             if " " in product:
