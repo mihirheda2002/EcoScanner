@@ -216,6 +216,11 @@ def eco_scanner(query):
         while "  " in product:
             product = product.replace("  "," ")
 
+        for word in product.split():
+            if word.isnumeric():
+                product = product.replace(word,"").strip()
+
+
         return product
 
 
