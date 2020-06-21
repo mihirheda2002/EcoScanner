@@ -87,11 +87,16 @@ def ingred_info(ingred,cur,conn):
 		def print_row(self):
 			for key in self.row_dict.keys():
 				print(key+" ----------- "+str(self.row_dict[key]))
-	cur.execute(f"SELECT * FROM ingredients WHERE ingred_name=%s",(ingred,))
+	cur.execute("SELECT * FROM ingredients WHERE ingred_name=%s",(ingred,))
 	all_rows = cur.fetchall()
 	if len(all_rows)==0:
 		return None
 	return IngredRow(all_rows[0])
+
+def delete_brand(brand,cur,conn):
+	cur.execute("DELETE FROM brands WHERE brand_name=%s",(brand,))
+	
+
 
 
 """
