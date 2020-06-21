@@ -217,7 +217,7 @@ def eco_scanner(query):
             product = product.replace("  "," ")
 
         for word in product.split():
-            if word.replace(".","").isnumer():
+            if word.replace(".","").isnumeric():
                 product = product.replace(word,"").strip()
 
 
