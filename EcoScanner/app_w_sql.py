@@ -7,7 +7,6 @@ from flask import Flask, request, jsonify
 import datetime
 import time
 #from firebase import firebase
-import datetime
 #from selenium import webdriver
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
@@ -15,7 +14,6 @@ import requests
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import json
-from flask import Flask, request, jsonify
 import ssl
 import eco_sql_lib
 
