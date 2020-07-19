@@ -121,6 +121,7 @@ def eco_scanner(query):
             try:
                 uClient = uReq(my_url,context=context)
             except:
+                print("Uclient not working")
                 return None
         
         # grab page html, save as soup
@@ -129,6 +130,7 @@ def eco_scanner(query):
         page_soup = soup(page_html,"html.parser")
         
         if "invalid" in page_soup.text:
+            print("invalid")
             return None
         
         
@@ -136,6 +138,7 @@ def eco_scanner(query):
         try:
             container = page_soup.findAll("table",{"class":"detail-list"})[0]
         except:
+            print("the correct table is not found")
             return None
         
         ## create blank dictionary
