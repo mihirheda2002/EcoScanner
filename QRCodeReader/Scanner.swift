@@ -131,9 +131,10 @@ class QRScannerController: UIViewController {
            
             //self.performSegue(withIdentifier: "showSVC", sender: self)
             
-            let link = "http://34.201.212.152/scan/"+barcode
+            let link = "http://35.153.34.57/scan/"+barcode
                 print(link)
-                if let url = URL(string: link) {
+            
+           /*     if let url = URL(string: link) {
                 URLSession.shared.dataTask(with: url) { data, response, error in
                    if let data = data {
                       if let jsonString = String(data: data, encoding: .utf8) {
@@ -143,8 +144,10 @@ class QRScannerController: UIViewController {
                       }
                     }
                 }.resume()
+                
+                self.performSegue(withIdentifier: "scannerToLoading", sender: self)
                  
-                 while json.isEmpty{
+                 /*while json.isEmpty{
                      print("checking if empty" + barcode)
                      //print(json)
                      if !(json.isEmpty){
@@ -163,9 +166,9 @@ class QRScannerController: UIViewController {
                             self.performSegue(withIdentifier: "showSVC", sender: self)
                          }
                      }
-                 }
+                 }*/
                 
-            }
+            }*/
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)

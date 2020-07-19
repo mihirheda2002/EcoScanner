@@ -16,6 +16,8 @@ extension StringProtocol {
     }
 }
 
+
+
 //let mainBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 //let notFoundView  = mainBoard.instantiateViewController(withIdentifier: "BarcodeNotFoundViewController.swift") as! BarcodeNotFoundViewController
 

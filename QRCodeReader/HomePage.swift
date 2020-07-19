@@ -19,6 +19,7 @@ class HomePage: UIViewController {
 
         //backgroundImage.contentMode = .scaleAspectFill
         // Do any additional setup after loading the view.
+        
     }
 
     /*

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A33768A248EA7C7004F2285 /* ManuallyEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A337689248EA7C7004F2285 /* ManuallyEnterViewController.swift */; };
+		7A36BD1D24988FEA0042A1EE /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A36BD1C249841000042A1EE /* giphy.gif */; };
 		7A55ECB6248ECA9B0017C3A1 /* earthBackground in Resources */ = {isa = PBXBuildFile; fileRef = 7A55ECB5248ECA9B0017C3A1 /* earthBackground */; };
 		7A55ECBA248EE6500017C3A1 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55ECB9248EE6500017C3A1 /* ScoreViewController.swift */; };
 		7A55ECC4248F04200017C3A1 /* scannerImage in Resources */ = {isa = PBXBuildFile; fileRef = 7A55ECC3248F04200017C3A1 /* scannerImage */; };
@@ -102,6 +103,7 @@
 				F4F09DB51DAF669400026BB2 /* QRCodeReader */,
 				F4F09DB41DAF669400026BB2 /* Products */,
 				7A55ECC3248F04200017C3A1 /* scannerImage */,
+				7A36BD1C249841000042A1EE /* giphy.gif */,
 				267F1659AEB236D58D0AD087 /* Frameworks */,
 				201E86D102222253C65ADE8A /* Pods */,
 			);
@@ -123,7 +125,6 @@
 				F4F09DBD1DAF669400026BB2 /* Assets.xcassets */,
 				7A55ECB5248ECA9B0017C3A1 /* earthBackground */,
 				7A77AD0224918540003EBB30 /* dials */,
-				7A36BD1C249841000042A1EE /* giphy.gif */,
 				F4F09DC21DAF669400026BB2 /* Info.plist */,
 				7AEDBE59240B0D9C00B32709 /* HomePage.swift */,
 				7A337689248EA7C7004F2285 /* ManuallyEnterViewController.swift */,
@@ -202,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A36BD1D24988FEA0042A1EE /* giphy.gif in Resources */,
 				7A55ECC4248F04200017C3A1 /* scannerImage in Resources */,
 				7A55ECB6248ECA9B0017C3A1 /* earthBackground in Resources */,
 				F4F09DBC1DAF669400026BB2 /* Main.storyboard in Resources */,
