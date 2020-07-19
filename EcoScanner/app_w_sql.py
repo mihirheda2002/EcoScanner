@@ -22,6 +22,8 @@ app = Flask(__name__)
 @app.route('/scan/<query>',methods=["GET"])
     
 def eco_scanner(query):
+
+    print('in route')
         
     response = {}
     
