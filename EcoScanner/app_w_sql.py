@@ -112,6 +112,8 @@ def eco_scanner(query):
     ## creates a dictionary with all known info from upcitemdb.com
 
     def lookup(query):
+
+        print("in lookup")
         ## append search UPC to the database website
         my_url = "https://www.upcitemdb.com/upc/"+query
         
