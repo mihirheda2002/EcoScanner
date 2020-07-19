@@ -124,6 +124,7 @@ def eco_scanner(query):
             context = ssl._create_unverified_context()
             try:
                 uClient = uReq(my_url,context=context)
+                print("Uclient worked")
             except:
                 print("Uclient not working")
                 return None
@@ -136,6 +137,8 @@ def eco_scanner(query):
         if "invalid" in page_soup.text:
             print("invalid")
             return None
+
+        print("not invalid")
         
         
         # find the table of item details, use first bc only 1
