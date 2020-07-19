@@ -149,15 +149,16 @@ def eco_scanner(query):
 
         
         def clean(x):
+        	y = "default"
             x=x.replace("&amp","&")
             for char in x:
                 if char.isnumeric():
                     tokens = x.split(char)
                     y = tokens[0]
-            if not y:
+            if y == "default":
                 return x.split(",")[0]
             else:
-                return x.split(",")[0]
+                return y.split(",")[0]
 
         product_name = clean(product_name)
 
@@ -810,7 +811,7 @@ def eco_scanner(query):
 
     for key in all_product_values.keys():
     	val = all_product_values[key]
-    	if isinstance(val,str):
+    	if isinstance(val,str): 
 	    	all_product_values[key] = val.replace(",","").replace(":","")
 
 
