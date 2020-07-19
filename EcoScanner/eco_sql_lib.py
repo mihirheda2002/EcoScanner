@@ -63,6 +63,7 @@ def brand_info(brand,cur,conn):
 			self.row_dict["fair_trade"] = row_list[4]
 			self.row_dict["nonGMO"] = row_list[5]
 			self.row_dict["RA"] = row_list[7]
+			self.row_dict["rainforest alliance"] = row_list[7]
 			self.row_dict["organic_operation_ID"] =row_list[6]
 
 		def print_row(self):
