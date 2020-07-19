@@ -808,6 +808,9 @@ def eco_scanner(query):
 
     print(all_product_values)
 
+    for key in all_product_values.keys():
+    	all_product_values[key] = all_product_values[key].replace(",","").replace(":","")
+
 
     """time_dict_2 = {}
     for key in time_dict.keys():
