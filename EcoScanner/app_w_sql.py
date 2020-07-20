@@ -144,6 +144,7 @@ def eco_scanner(query):
         # find the table of item details, use first bc only 1
         try:
             container = page_soup.findAll("table",{"class":"detail-list"})[0]
+            print("container found")
         except:
             print("the correct table is not found")
             return None
@@ -154,11 +155,13 @@ def eco_scanner(query):
         ## find product name
         
         piece = page_soup.findAll("p",{"class":"detailtitle"})[0]
-        
+        print("piece found")
+
         product_name = piece.b.text
 
         
         def clean(x):
+            "entered clean"
             y = "default"
             x=x.replace("&amp","&")
             for char in x:
@@ -171,6 +174,7 @@ def eco_scanner(query):
                 return y.split(",")[0]
 
         product_name = clean(product_name)
+        print("finished cleaning")
 
         
         ## find all other info
