@@ -179,6 +179,7 @@ def eco_scanner(query):
         
         ## find all other info
         trs = container.findAll("tr")
+        print("found all tr")
         
         ## loop through info things
         for tr in trs:
@@ -198,6 +199,8 @@ def eco_scanner(query):
                     
                     info_dict["product name"] = product_name.strip()
                 info_dict[key]=value
+        print("info dict:")
+        print(info_dict)
         return info_dict
 
 
